@@ -1,14 +1,18 @@
 #pragma once
+
 #include <memory>
 #include <raylib.h>
+#include <variant>
+#include "shapes.h"
 
 struct EntityProperties {
 	std::shared_ptr<Texture2D> texture;
-	Vector2 location;
-	double size;
+	float size;
 	bool visible;
 	int type_id;
 	int instance_id;
+	Vector2 position; // Always the middle
+	std::variant<Circle, Pixel, Line, Rec, Triangle> shape;
 };
 
 class Entity {
@@ -26,6 +30,9 @@ class Entity {
 
 	public:
 	virtual void on_collision(int type_id, int instance_id) = 0;
+
+	public:
+	virtual void on_key_pressed() = 0;
 
 	public:
 	virtual ~Entity() = default;

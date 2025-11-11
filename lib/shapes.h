@@ -1,6 +1,8 @@
-#include "entity.h"
+#pragma once
 
-class Circle : public Entity {
+#include <raylib.h>
+
+class Circle {
 	Vector2 position; 
 	double radius; 
 	Color color;
