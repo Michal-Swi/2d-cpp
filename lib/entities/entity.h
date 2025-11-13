@@ -2,17 +2,17 @@
 
 #include <memory>
 #include <raylib.h>
+#include <utility>
 #include <variant>
-#include "shapes.h"
+#include <vector>
+#include "shapes_vector.h"
 
 struct EntityProperties {
 	std::shared_ptr<Texture2D> texture;
-	float size;
 	bool visible;
 	int type_id;
 	int instance_id;
-	Vector2 position; // Always the middle
-	std::variant<Circle, Pixel, Line, Rec, Triangle> shape;
+	ShapesVector shapes;
 };
 
 class Entity {
