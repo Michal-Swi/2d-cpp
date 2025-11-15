@@ -2,4 +2,6 @@ lib/test.cpp
 lib/a.out
 lib/*/test.cpp
 lib/*/a.out
+lib/compile_commands.json
+lib/.cache
 
